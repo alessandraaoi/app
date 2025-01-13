@@ -1,42 +1,258 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
+/* ----------------- HEADER ----------------- */
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.header, .header2  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 182, 193, 0.2); 
+    padding: 20px;
   }
-  to {
-    transform: rotate(360deg);
+
+/* Título del header */
+.header__title, .header2__title {
+    text-align: center center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #333;
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  /* Enlace del título */
+.header__link, .header2__link {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
   }
+
+  .header__link:hover {
+    color:palevioletred; /* Cambia a azul al pasar el ratón */
+  }
+
+/* Lista de navegación */
+.header__list, .header2__list {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    /* gap: 15px; */
+    list-style: none;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+
+/* Elementos de la lista */
+.header__listItem, .header2__listItem {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+
+.header__listItem .header__link {
+    text-decoration: none;
+    color: #555;
+    transition: color 0.3s ease;
+  }
+
+.header__listItem .header__link:hover {
+    color:palevioletred; /* Color azul al pasar el ratón */
+  }
+
+/* Botón de inicio de sesión */
+.header__button, .header__button {
+    background-color: palevioletred; /* Fondo azul */
+    color: #fff; /* Texto blanco */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .header__button:hover {
+    background-color:  rgba(255, 182, 193, 0.2);  
+    color: palevioletred;
+  }
+  
+  .header__button .header__link {
+    color: #fff; /* Asegúrate de que el enlace sea blanco en el botón */
+    text-decoration: none;
+  }
+
+
+/* ----------------- LOGIN FORM ----------------- */
+
+/* Contenedor principal del registro */
+.register__div {
+    max-width: 400px;
+    margin: 5rem auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+/* Encabezados del formulario */
+.register__h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #555;
+    margin-bottom: 5px;
+  }
+
+  .register__h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo del formulario */
+  .register__form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* Etiquetas del formulario */
+  .register__formLabel {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #555;
+    text-align: left;
+  }
+  
+  /* Campos de entrada */
+  .register__formInput {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .register__formInput:focus {
+    border-color: palevioletred;
+    outline: none;
+  }
+  
+  /* Botón de enviar */
+  .register__formButton {
+    background-color: palevioletred;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .register__formButton:hover {
+    background-color: white;
+    color: palevioletred;
+  }
+  
+  /* Texto debajo del botón */
+  .register__p {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  /* Enlace para registrarse */
+  .register__iniciaSesion {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: palevioletred;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .register__iniciaSesion:hover {
+    color: darkorchid;
+  }
+
+
+
+
+
+
+/* ----------------- INICIO.JSX ----------------- */
+
+.inicio__div, .info__p, .community__div, .loginError__div{
+    height: 100vh;
+    padding: 3rem;
+    background-color: rgba(255, 182, 193, 0.2);
+    display: flex;
+    justify-content: space-around;
+    align-items: top;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.card {
-  padding: 2em;
+/* ----------------- HOMEPAGE.JSX ----------------- */
+
+.home__div{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.read-the-docs {
-  color: #888;
+/* ----------------- WELCOME.JSX ----------------- */
+/* -----------------  ANUNCIOS ----------------- */
+
+.welcome__divCard{
+    margin: 0 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center center;
+    max-width: 80%;
+    
+}
+
+.divCard__content{
+    padding: 1rem;
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid black;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+}
+
+.divCard__content__title{
+    font-weight: bold;
+    font-size: 1.3rem;
+} /* --- mira para hacerlo con nth child */
+
+.div__divCard__button{
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+}
+.divCard__button {
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    outline: none;
+    padding: .8rem;
+    color: palevioletred;
+    border-radius: 8px;
+    background-color: white;
+    border: 1px solid palevioletred; 
+    max-width: 15rem;
 }
