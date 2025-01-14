@@ -12,6 +12,8 @@ function UpdateForm() {
 
   const navigate = useNavigate();
 
+  const { VITE_URL_EXPRESS_VERCEL } = import.meta.env;
+
   // GET ANUNCIO POR ID (id anuncio)
 
   let getAnuncio = async () => {
@@ -96,24 +98,42 @@ function UpdateForm() {
     console.log("PUT OK");
 
     navigate(`/welcome/${localStorage.getItem("_id")}`);
-  }
+  };
 
   return (
     <div className="updateForm__div">
-      <h2 className="updateForm__h2">Update Anuncio</h2>
+      <h2 className="updateForm__h2">Actualiza tu anuncio!</h2>
 
       {/* ------- FORM PARA ACTUALIZAR -------- */}
-      <form onSubmit={updateAnuncio} ref={formularioPut} className="formularioPut">
+      <form
+        onSubmit={updateAnuncio}
+        ref={formularioPut}
+        className="formularioPut"
+      >
         {/* <form> */}
-        <input type="text" name="_idAnuncio" value={`${idParam}`} className="formularioPut__input"/>
-        <input type="text" name="title" defaultValue={`${idTitle}`} className="formularioPut__input" />
+        <input
+          type="text"
+          name="_idAnuncio"
+          value={`${idParam}`}
+          className="formularioPut__input formularioPut__inputId"
+        />
+        <input
+          type="text"
+          name="title"
+          defaultValue={`${idTitle}`}
+          className="formularioPut__input"
+        />
         <input
           type="text"
           name="description"
           defaultValue={`${idDescription}`}
           className="formularioPut__input"
         />
-        <input type="submit" value="Actualizar" className="formularioPut__submit"/>
+        <input
+          type="submit"
+          value="Actualizar"
+          className="formularioPut__submit"
+        />
       </form>
     </div>
   );

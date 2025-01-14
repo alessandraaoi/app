@@ -21,15 +21,16 @@ function OfreceServicio() {
 
     let userid = sessionStorage.getItem("_id");
 
-    const { title, description } = formularioPost.current;
+    const { title, description, useridInput } = formularioPost.current;
 
     const nuevo = {
       title: title.value,
       description: description.value,
-      userid,
+      userid: useridInput.value,
     };
     title.value = nuevo.title;
     description.value = nuevo.description;
+    useridInput.value = nuevo.userid
 
     let options = {
       method: "POST",
@@ -48,10 +49,7 @@ function OfreceServicio() {
 
   let getAnunciosById = async () => {
     // creo var para guardar los datos recuperados del localStorage
-    
     let userid = localStorage.getItem("_id");
-
-    // navigate(`/anuncios/${userid}`)
 
     let options = { method: "GET" };
 
@@ -61,12 +59,12 @@ function OfreceServicio() {
     );
     let datos = await peticion.json();
 
-    setAnuncios2(datos);
+    setAnuncios(datos);
   };
 
   useEffect(() => {
     getAnunciosById();
-  });
+  }, [0]);
 
   const setLocalStorage = (_id) => {
     localStorage.setItem("idAnuncio", anuncios._id);
@@ -78,12 +76,11 @@ function OfreceServicio() {
     <>
       <Header2 />
 
-      <div className="servicio__div nuevoAnuncio__div">
-        <h2 className="div__p nuevoAnuncio__h2"> Publica un nuevo anuncio </h2>
-      </div>
+      <div className="nuevoAnuncio__div">
+        <h2 className="nuevoAnuncio__h2"> Publica un nuevo anuncio </h2>
 
-      {/* ------------ FORM PARA AÑADIR ------- */}
-      <div className="formularioPost__div">
+        {/* ------------ FORM PARA AÑADIR ------- */}
+
         <form
           onSubmit={crearAnuncio}
           ref={formularioPost}
@@ -101,21 +98,32 @@ function OfreceServicio() {
             placeholder="Descripcion"
             className="formularioPost__input"
           />
+
+          <input
+            type="text"
+            name="useridInput"
+            placeholder={`${localStorage.getItem('_id')}`}
+            value = {`${localStorage.getItem('_id')}`}
+            className="formularioPost__input formularioPost__inputId"
+          />
+
           <input
             type="submit"
             value="Publica un nuevo anuncio"
             className="formularioPost__submit"
           />
         </form>
+
+        <h3 className="nuevoAnuncio__h3">Todos mis anuncios</h3>
+
+        <ul className="nuevoAnuncio__list">
+          {anuncios.map((anuncio) => (
+            <li key={anuncio.title} className="nuevoAnuncio__listItem">
+              {anuncio.title}
+            </li>
+          ))}
+        </ul>
       </div>
-
-      <h3>Todos mis anuncios</h3>
-
-      <ul>
-        {anuncios2.map((anuncio2) => (
-          <li key={anuncio2._id}>{anuncio2.title}</li>
-        ))}
-      </ul>
     </>
   );
 }

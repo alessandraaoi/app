@@ -32,15 +32,15 @@
   }
 
   .header__link:hover {
-    color:palevioletred; /* Cambia a azul al pasar el ratón */
+    color:palevioletred;
   }
 
 /* Lista de navegación */
 .header__list, .header2__list {
     width: 100%;
     display: flex;
+    gap: 15px;
     justify-content: space-around;
-    /* gap: 15px; */
     list-style: none;
     align-items: center;
     padding: 0;
@@ -51,6 +51,9 @@
 .header__listItem, .header2__listItem {
     font-size: 1rem;
     font-weight: 500;
+    color:  #333;
+    display: flex;
+    align-items: center;
   }
 
 
@@ -61,13 +64,13 @@
   }
 
 .header__listItem .header__link:hover {
-    color:palevioletred; /* Color azul al pasar el ratón */
+    color:palevioletred; 
   }
 
-/* Botón de inicio de sesión */
+/* Botón Area Personal */
 .header__button, .header__button {
-    background-color: palevioletred; /* Fondo azul */
-    color: #fff; /* Texto blanco */
+    background-color: palevioletred;
+    color: #fff; 
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -77,14 +80,74 @@
     transition: background-color 0.3s ease;
   }
 
+/* Botón Cierre sesión */
+  .logout__button {
+    background-color: white;
+    color: rgba(255, 182, 193, 0.7); 
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: lighter;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .logout__button:hover {
+    background-color: rgba(255, 182, 193, 0.2);
+    color: white;
+  }
+
   .header__button:hover {
     background-color:  rgba(255, 182, 193, 0.2);  
     color: palevioletred;
   }
   
   .header__button .header__link {
-    color: #fff; /* Asegúrate de que el enlace sea blanco en el botón */
+    color: #fff;
     text-decoration: none;
+  }
+
+  @media (max-width: 768px) {
+    .header2 {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .header2__title {
+      margin-bottom: 10px;
+    }
+  
+    .header2__list {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .header2__listItem {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .header2 {
+      padding: 10px;
+    }
+  
+    .header2__title {
+      font-size: 1.5rem;
+    }
+  
+    .header__link {
+      font-size: 0.9rem;
+    }
+  
+    .header__button, 
+    .logout__button {
+      font-size: 0.9rem;
+      padding: 6px 10px;
+    }
   }
 
 
@@ -92,7 +155,7 @@
 
 /* Contenedor principal del registro */
 .register__div {
-    max-width: 400px;
+    max-width: 100%;
     margin: 5rem auto;
     padding: 20px;
     background-color: #ffffff;
@@ -132,7 +195,7 @@
     text-align: left;
   }
   
-  /* Campos de entrada */
+  /* Inputs */
   .register__formInput {
     width: 100%;
     padding: 10px;
@@ -147,7 +210,7 @@
     outline: none;
   }
   
-  /* Botón de enviar */
+  /* Botón sbmit */
   .register__formButton {
     background-color: palevioletred;
     color: #fff;
@@ -165,7 +228,7 @@
     color: palevioletred;
   }
   
-  /* Texto debajo del botón */
+  /* Subtexto */
   .register__p {
     font-size: 0.9rem;
     color: #555;
@@ -185,14 +248,11 @@
   }
 
 
+/* ----------------- EXPLORA.JSX ----------------- */
 
-
-
-
-/* ----------------- INICIO.JSX ----------------- */
-
-.inicio__div, .info__p, .community__div, .loginError__div{
+.inicio__div, .info__p, .loginError__div{
     height: 100vh;
+    width: 100%;
     padding: 3rem;
     background-color: rgba(255, 182, 193, 0.2);
     display: flex;
@@ -201,18 +261,158 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* ----------------- HOMEPAGE.JSX ----------------- */
+/* Div principal */
+.explora__div {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 182, 193, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
 
-.home__div{
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
+/* Texto principal */
+.explora__h2 {
+  font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.explora__h3 {
+  font-size: 1.2rem;
+    font-weight: 400;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Lista de anuncios */
+.explora__list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Elementos individuales de la lista */
+.explora__listItem {
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: background-color 0.3s ease;
+}
+
+.explora__listItem:hover {
+  background-color: #f0f8ff;
+}
+
+/* Texto dentro de los elementos de la lista */
+.explora__listItemText {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 5px;
+  line-height: 1.4; 
+}
+
+.explora__listItemTitle{
+  font-size: 1.3rem;
+  font-weight: bold;
 }
 
 /* ----------------- WELCOME.JSX ----------------- */
+
+/* Div principal */
+.welcome__div {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 182, 193, 0.2);
+  text-align: center;
+}
+
+/* Textos principales */
+.welcome__h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.welcome__h2 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.welcome__h2sub{
+  font-size: .9rem;
+  font-weight: 400;
+  color: #555;
+  margin-bottom: 20px; 
+}
+
+/* Div todos los anuncios */
+.welcome__divCard {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Nombre usuario */
+.divCard__user {
+  font-size: .9rem;
+  font-weight: lighter;
+  color: palevioletred;
+  margin-bottom: 15px;
+}
+
+/* Div anuncio */
+.divCard__content {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  text-align: left;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Textos anuncios */
+.divCard__content__title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.divCard__content__description {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Div botones anuncios */
+.div__divCard__button {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+
+.divCard__button:hover {
+  background-color: rgba(255, 182, 193, 0.2);
+  color: palevioletred;
+}
+
+
 /* -----------------  ANUNCIOS ----------------- */
 
 .welcome__divCard{
@@ -230,7 +430,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px solid black;
     font-family: Arial, Helvetica, sans-serif;
     width: 100%;
 }
@@ -238,13 +437,14 @@
 .divCard__content__title{
     font-weight: bold;
     font-size: 1.3rem;
-} /* --- mira para hacerlo con nth child */
+} 
 
 .div__divCard__button{
     display: flex;
     justify-content: space-between;
     align-items: left;
 }
+
 .divCard__button {
     cursor: pointer;
     font-family: Arial, Helvetica, sans-serif;
@@ -252,7 +452,176 @@
     padding: .8rem;
     color: palevioletred;
     border-radius: 8px;
-    background-color: white;
-    border: 1px solid palevioletred; 
+    background-color: rgba(255, 182, 193, 0.2);
+    border: none; 
     max-width: 15rem;
+}
+
+.divCard__button:hover {
+  background-color: palevioletred;
+  color: white;
+}
+
+/* ------------- OFRECESERVICIO.JSX --------------- */
+
+/* Div principal */
+.nuevoAnuncio__div {
+  max-width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 182, 193, 0.2);
+  text-align: center;
+}
+
+/* Texto principal */
+.nuevoAnuncio__h2 .nuevoAnuncio__h3{
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin: 15px 0;
+}
+
+/* Formulario */
+.formularioPost {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+/* Inputs del formulario */
+.formularioPost__input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.formularioPost__inputId{
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.formularioPost__input:focus {
+  border-color: palevioletred;
+  outline: none;
+}
+
+/* Botón de submit */
+.formularioPost__submit {
+  background-color: palevioletred;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formularioPost__submit:hover {
+  background-color: rgba(255, 182, 193, 0.5);;
+  color: palevioletred;
+}
+
+/* Todos mis anuncios */
+.nuevoAnuncio__list {
+  margin: 15px 0;
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Li */
+.nuevoAnuncio__listItem {
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  color: #333;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.nuevoAnuncio__listItem:hover {
+  background-color: #f0f8ff;
+}
+
+/* --------- UPDATEFORM.JSX ------------ */
+
+/* Div principal */
+.updateForm__div{
+  max-width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 182, 193, 0.2);
+  text-align: center;
+}
+
+.updateForm__h2{
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin: 15px 0;
+}
+
+/*Formulario PUT*/
+.formularioPut{
+  width: 100%;
+  max-width: 400px;
+  background-color: #ffffff;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Inputs del formulario */
+.formularioPut__input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  color: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.formularioPut__input:focus {
+  border-color: palevioletred;
+  background-color: #f0f8ff;
+  outline: none;
+}
+
+.formularioPut__inputId{
+  color: rgba(0, 0, 0, 0.3);
+}
+
+/* Botón de submit */
+.formularioPut__submit {
+  background-color: palevioletred;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formularioPut__submit:hover {
+  background-color: rgba(255, 182, 193, 0.5);;
+  color: palevioletred;
 }

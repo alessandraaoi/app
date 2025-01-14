@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Login from './views/Login'
-import Home from './views/Home'
 import LoginError from './views/LoginError'
 import Welcome from './views/Welcome'
 import OfreceServicio from './views/OfreceServicio'
@@ -9,6 +8,7 @@ import OfreceServicio from './views/OfreceServicio'
 import './App.css'
 import Explora from './views/Explora'
 import UpdateForm from './views/UpdateForm'
+import Contacto from './views/Contacto'
 
 
 function App() {
@@ -21,9 +21,9 @@ function App() {
     <Routes>
 
     <Route path = '/' element = {<Login/>}/>
-    <Route path = '/home' element = {<Home/>}/>
     <Route path = '/explora' element = {<Explora/>}/>
     <Route path = '/servicios' element = { <OfreceServicio/>} />
+    <Route path = '/contacto' element = { <Contacto/>} />
     
 
     <Route path = '/loginError/:_id' element = {<LoginError/>} />

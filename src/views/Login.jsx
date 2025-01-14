@@ -102,7 +102,7 @@ function Login() {
           {loading ? "Cargando..." : "Login! "}{" "}
         </button>
         <br />
-        <p className="register__p">No tienes una cuenta?</p>
+        {/* <p className="register__p">No tienes una cuenta?</p>
         <b
           onClick={() => {
             navigate("/home");
@@ -110,7 +110,7 @@ function Login() {
           className="register__iniciaSesion"
         >
           Registrate!
-        </b>
+        </b> */}
       </form>
     </div>
   );

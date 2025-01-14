@@ -27,19 +27,19 @@ function Explora() {
     <>
       <Header2 />
 
-      <div className="community__div">
-        <p className="community__p"> Explora </p>
+      <div className="explora__div">
+        <h2 className="explora__h2"> Explora tu comunidad! </h2>
+        <h3 className="explora__h3">Explora los anuncios de todos los usuarios, seguramente puedan ayudarse mutuamente! </h3>
 
-        <ul>
+        <ul className="explora__list">
           {anuncios.map((anuncio) => (
-            <li key={anuncio._id}>
-              <p>{anuncio.title}</p>
-              <p>{anuncio.description}</p>
+            <li key={anuncio._id} className="explora__listItem">
+              <p className="explora__listItemTitle">{anuncio.title}</p>
+              <p className="explora__listItemText">{anuncio.description}</p>
             </li>
           ))}
         </ul>
 
-        {/* <p className='community__p'>{`${titulo}`}</p> */}
       </div>
     </>
   );

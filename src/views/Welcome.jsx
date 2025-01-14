@@ -58,15 +58,17 @@ function Welcome() {
     <Header2/> 
 
     <div className='welcome__div'>
-      <h3 className='welcome__h3'>{name? `Bienvenido ${name}!` : 'Login Error' }</h3>
-      <h2 className='welcome__h2'>{name? `${name} : esta es tu area personal de usuario!` : ''  }</h2>
+      <h3 className='welcome__h3'>{name? `Bienvenido/a ${name}!` : 'Login Error' }</h3>
+      <h2 className='welcome__h2'>{name? `${name}, esta es tu area personal de usuario!` : ''  }</h2>
+      <h3 className='welcome__h2sub'>Aquí podrás gestionar tu tablón de anuncios</h3>
 
         <div className='welcome__divCard'>
-          <p className='divCard__user'>{`${name}`}</p>
+          
           
         {anuncios.map((element) => {
           return(
           <div className='divCard__content'>
+            <p className='divCard__user'>{`${name}`}</p>
           <p key={element.title} className='divCard__content__title'>{element.title}</p>
           <p key={element.description} className='divCard__content__description'>{element.description}</p>
 
