@@ -33,8 +33,19 @@ function Login() {
       };
 
       setLoading(true);
+
+      const config = {
+        method: 'POST',
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Headers': 'POST, GET, PUT, DELETE, OPTIONS, HEAD, Authorization, Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers, Access-Control-Allow-Origin',
+            'Content-Type': 'application/json',
+        }
+    }
+
+  
       await axios
-        .post(`${VITE_URL_EXPRESS_VERCEL}/login`, User)
+        .post(`${VITE_URL_EXPRESS_VERCEL}/login`, User, config)
         .then(({ data }) => {
           setMensaje(data.mensaje);
           setInputs({ correo: "", password: "" });
