@@ -1,12 +1,11 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 import OfreceServicio from "../views/OfreceServicio";
-
 import Explora from "../views/Explora";
-import Welcome from "../views/Welcome";
 
+// Header2 se muestra cuando el usuario ha iniciado sesión
 function Header2() {
   const navigate = useNavigate();
 

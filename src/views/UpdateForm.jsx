@@ -13,6 +13,12 @@ function UpdateForm() {
   const navigate = useNavigate();
 
   const { VITE_URL_EXPRESS_VERCEL } = import.meta.env;
+  
+  // al hacer click en el botón 'cancelar', vuelvo al área personal
+  const goBack = () => {
+    let local = localStorage.getItem("_id");
+    navigate(`/welcome/${local}`);
+  }
 
   // GET ANUNCIO POR ID (id anuncio)
 
@@ -33,12 +39,14 @@ function UpdateForm() {
     getAnuncio();
   }, [anuncios._id]);
 
+  // guardo los datos del anuncio en localstorage
   useEffect(() => {
     localStorage.setItem("idAnuncio", anuncios._id);
     localStorage.setItem("title", anuncios.title);
     localStorage.setItem("description", anuncios.description);
   }, [anuncios._id]);
 
+  // recojo los datos de localstorage y los guardo en variables
   let idParam = localStorage.getItem("idAnuncio");
 
   let idTitle = localStorage.getItem("title");
@@ -90,9 +98,6 @@ function UpdateForm() {
     let datos = await peticion.json();
     setAnuncios(datos);
 
-    console.log("idAnuncio", idAnuncio);
-    console.log("idParams", idParam);
-
     formularioPut.current.reset();
 
     console.log("PUT OK");
@@ -110,7 +115,6 @@ function UpdateForm() {
         ref={formularioPut}
         className="formularioPut"
       >
-        {/* <form> */}
         <input
           type="text"
           name="_idAnuncio"
@@ -134,6 +138,8 @@ function UpdateForm() {
           value="Actualizar"
           className="formularioPut__submit"
         />
+        
+        <button className="formularioPut__button" onClick={goBack}>Cancelar</button>
       </form>
     </div>
   );

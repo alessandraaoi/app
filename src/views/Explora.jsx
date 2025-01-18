@@ -23,15 +23,25 @@ function Explora() {
     getAnuncios();
   }, []);
 
+
   return (
     <>
       <Header2 />
 
       <div className="explora__div">
         <h2 className="explora__h2"> Explora tu comunidad! </h2>
-        <h3 className="explora__h3">Explora los anuncios de todos los usuarios, seguramente puedan ayudarse mutuamente! </h3>
+        <h2 className="explora__h2__sub">
+          ¿Sabes cocinar, diseñar, tocar un instrumento, o enseñar un idioma? ¿O
+          tal vez estás buscando aprender algo nuevo? En Better Barter,
+          puedes intercambiar tus habilidades directamente con otras personas,
+          sin necesidad de dinero, solo talento, tiempo y pasión.
+        </h2>
+        <h2 className="explora__subtitulo">
+          En este espacio encont los anuncios publicados por otros usuarios
+        </h2>
 
         <ul className="explora__list">
+          
           {anuncios.map((anuncio) => (
             <li key={anuncio._id} className="explora__listItem">
               <p className="explora__listItemTitle">{anuncio.title}</p>
@@ -39,7 +49,6 @@ function Explora() {
             </li>
           ))}
         </ul>
-
       </div>
     </>
   );

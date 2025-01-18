@@ -4,17 +4,21 @@ import { useRef, useState, useEffect, useParams } from "react";
 import { useNavigate } from "react-router-dom";
 
 function OfreceServicio() {
+
+  const navigate = useNavigate()
+
   const formularioPost = useRef();
 
   const { VITE_URL_EXPRESS_VERCEL } = import.meta.env;
 
-  // const userid = useParams
+  const [anuncios, setAnuncios] = useState([]); 
 
-  // const navigate = useNavigate()
-
-  const [anuncios, setAnuncios] = useState([]); // post
-
-  const [anuncios2, setAnuncios2] = useState([]); //get
+  
+  // al hacer click en el botón 'cancelar', vuelvo al área personal
+  const goBack = () => {
+    let local = localStorage.getItem("_id");
+    navigate(`/welcome/${local}`);
+  }
 
   let crearAnuncio = async (e) => {
     e.preventDefault();
@@ -77,8 +81,8 @@ function OfreceServicio() {
       <Header2 />
 
       <div className="nuevoAnuncio__div">
-        <h2 className="nuevoAnuncio__h2"> Publica un nuevo anuncio </h2>
-
+        <h2 className="nuevoAnuncio__h2"> Publica un nuevo anuncio</h2>
+    
         {/* ------------ FORM PARA AÑADIR ------- */}
 
         <form
@@ -112,6 +116,8 @@ function OfreceServicio() {
             value="Publica un nuevo anuncio"
             className="formularioPost__submit"
           />
+
+<button className="formularioPost__button" onClick={goBack}>Cancelar</button>
         </form>
 
         <h3 className="nuevoAnuncio__h3">Todos mis anuncios</h3>
@@ -119,7 +125,7 @@ function OfreceServicio() {
         <ul className="nuevoAnuncio__list">
           {anuncios.map((anuncio) => (
             <li key={anuncio.title} className="nuevoAnuncio__listItem">
-              {anuncio.title}
+              {anuncio.title}, {anuncio.description}
             </li>
           ))}
         </ul>

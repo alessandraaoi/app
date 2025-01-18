@@ -1,264 +1,268 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* ----------------- HEADER ----------------- */
 
-.header, .header2  {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgba(255, 182, 193, 0.2); 
-    padding: 20px;
-  }
+.header,
+.header2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 182, 193, 0.2);
+  padding: 20px;
+}
 
 /* Título del header */
-.header__title, .header2__title {
-    text-align: center center;
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 30px;
-    color: #333;
-  }
+.header__title,
+.header2__title {
+  text-align: center center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #333;
+}
 
-  /* Enlace del título */
-.header__link, .header2__link {
-    text-decoration: none;
-    color: inherit;
-    transition: color 0.3s ease;
-  }
+/* Enlace del título */
+.header__link,
+.header2__link {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
 
-  .header__link:hover {
-    color:palevioletred;
-  }
+.header__link:hover {
+  color: palevioletred;
+}
 
 /* Lista de navegación */
-.header__list, .header2__list {
-    width: 100%;
-    display: flex;
-    gap: 15px;
-    justify-content: space-around;
-    list-style: none;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-  }
+.header__list,
+.header2__list {
+  width: 100%;
+  display: flex;
+  gap: 15px;
+  justify-content: space-around;
+  list-style: none;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
 
 /* Elementos de la lista */
-.header__listItem, .header2__listItem {
-    font-size: 1rem;
-    font-weight: 500;
-    color:  #333;
-    display: flex;
-    align-items: center;
-  }
-
+.header__listItem,
+.header2__listItem {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
 
 .header__listItem .header__link {
-    text-decoration: none;
-    color: #555;
-    transition: color 0.3s ease;
-  }
+  text-decoration: none;
+  color: #555;
+  transition: color 0.3s ease;
+}
 
-.header__listItem .header__link:hover {
-    color:palevioletred; 
-  }
+.header__link:hover,
+.header__button:hover {
+  color: palevioletred;
+}
 
 /* Botón Area Personal */
-.header__button, .header__button {
-    background-color: palevioletred;
-    color: #fff; 
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
+.header__button {
+  background-color: transparent;
+  color: #555;
+  border: none;
+  /* padding: 10px 20px; */
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
 
 /* Botón Cierre sesión */
+.logout__button {
+  background-color: white;
+  color: rgba(255, 182, 193);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: lighter;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout__button:hover {
+  background-color: rgba(255, 182, 193, 0.2);
+  color: white;
+}
+
+.header__button .header__link {
+  color: #fff;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .header2 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .header2__title {
+    margin-bottom: 10px;
+  }
+
+  .header2__list {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header2__listItem {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .header2 {
+    padding: 10px;
+  }
+
+  .header2__title {
+    font-size: 1.5rem;
+  }
+
+  .header__link {
+    font-size: 0.9rem;
+  }
+
+  .header__button,
   .logout__button {
-    background-color: white;
-    color: rgba(255, 182, 193, 0.7); 
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-weight: lighter;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 0.9rem;
+    padding: 6px 10px;
   }
-
-  .logout__button:hover {
-    background-color: rgba(255, 182, 193, 0.2);
-    color: white;
-  }
-
-  .header__button:hover {
-    background-color:  rgba(255, 182, 193, 0.2);  
-    color: palevioletred;
-  }
-  
-  .header__button .header__link {
-    color: #fff;
-    text-decoration: none;
-  }
-
-  @media (max-width: 768px) {
-    .header2 {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-  
-    .header2__title {
-      margin-bottom: 10px;
-    }
-  
-    .header2__list {
-      flex-direction: column;
-      gap: 10px;
-    }
-  
-    .header2__listItem {
-      width: 100%;
-      justify-content: center;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .header2 {
-      padding: 10px;
-    }
-  
-    .header2__title {
-      font-size: 1.5rem;
-    }
-  
-    .header__link {
-      font-size: 0.9rem;
-    }
-  
-    .header__button, 
-    .logout__button {
-      font-size: 0.9rem;
-      padding: 6px 10px;
-    }
-  }
-
+}
 
 /* ----------------- LOGIN FORM ----------------- */
 
 /* Contenedor principal del registro */
 .register__div {
-    max-width: 100%;
-    margin: 5rem auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
+  max-width: 40%;
+  margin: 5rem auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
 
 /* Encabezados del formulario */
-.register__h3 {
-    font-size: 1rem;
-    font-weight: 400;
-    color: #555;
-    margin-bottom: 5px;
-  }
+.register__h3 .register__p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #555;
+  margin-bottom: 5px;
+}
+.register__p {
+  margin: 15px 0;
+  line-height: 1.6;
+}
 
-  .register__h2 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  /* Estilo del formulario */
-  .register__form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  /* Etiquetas del formulario */
-  .register__formLabel {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: #555;
-    text-align: left;
-  }
-  
-  /* Inputs */
-  .register__formInput {
-    width: 100%;
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    transition: border-color 0.3s ease;
-  }
-  
-  .register__formInput:focus {
-    border-color: palevioletred;
-    outline: none;
-  }
-  
-  /* Botón sbmit */
-  .register__formButton {
-    background-color: palevioletred;
-    color: #fff;
-    font-size: 1rem;
-    font-weight: bold;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .register__formButton:hover {
-    background-color: white;
-    color: palevioletred;
-  }
-  
-  /* Subtexto */
-  .register__p {
-    font-size: 0.9rem;
-    color: #555;
-  }
-  
-  /* Enlace para registrarse */
-  .register__iniciaSesion {
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: palevioletred;
-    cursor: pointer;
-    transition: color 0.3s ease;
-  }
-  
-  .register__iniciaSesion:hover {
-    color: darkorchid;
-  }
+.register__h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
 
+/* Estilo del formulario */
+.register__form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Etiquetas del formulario */
+.register__formLabel {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #555;
+  text-align: left;
+}
+
+/* Inputs */
+.register__formInput {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.register__formInput:focus {
+  border-color: palevioletred;
+  outline: none;
+}
+
+/* Botón sbmit */
+.register__formButton, .loginError__button {
+  background-color: palevioletred;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.register__formButton:hover, .loginError__button:hover {
+  background-color: white;
+  color: palevioletred;
+}
+
+/* Subtexto */
+.register__p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Enlace para registrarse */
+.register__iniciaSesion {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: palevioletred;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.register__iniciaSesion:hover {
+  color: darkorchid;
+}
 
 /* ----------------- EXPLORA.JSX ----------------- */
 
-.inicio__div, .info__p, .loginError__div{
-    height: 100vh;
-    width: 100%;
-    padding: 3rem;
-    background-color: rgba(255, 182, 193, 0.2);
-    display: flex;
-    justify-content: space-around;
-    align-items: top;
-    font-family: Arial, Helvetica, sans-serif;
+
+.inicio__div,
+.info__p,
+.loginError__div {
+  height: 100vh;
+  width: 100%;
+  padding: 3rem;
+  background-color: rgba(255, 182, 193, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Div principal */
@@ -274,16 +278,24 @@
 /* Texto principal */
 .explora__h2 {
   font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+.explora__h2__sub {
+  font-size: 1rem;
+  font-weight: 400;
+  color: palevioletred;
+  margin-bottom: 5px;
+  margin: 15px 0;
+  line-height: 1.6;
 }
 
-.explora__h3 {
+.explora__subtitulo {
   font-size: 1.2rem;
-    font-weight: 400;
-    color: #555;
-    margin-bottom: 20px;
+  font-weight: 400;
+  color: #555;
+  margin-bottom: 20px;
 }
 
 /* Lista de anuncios */
@@ -303,7 +315,7 @@
   border: 1px solid #ccc;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: left;
+  text-align: center;
   transition: background-color 0.3s ease;
 }
 
@@ -316,10 +328,10 @@
   font-size: 1rem;
   color: #333;
   margin-bottom: 5px;
-  line-height: 1.4; 
+  line-height: 1.4;
 }
 
-.explora__listItemTitle{
+.explora__listItemTitle {
   font-size: 1.3rem;
   font-weight: bold;
 }
@@ -350,11 +362,28 @@
   margin-bottom: 20px;
 }
 
-.welcome__h2sub{
-  font-size: .9rem;
+.welcome__h2sub {
+  font-size: 0.9rem;
   font-weight: 400;
   color: #555;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
+}
+
+.welcome__button {
+  background-color: palevioletred;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.welcome__button:hover {
+  background-color: rgba(255, 182, 193, 0.2);
+  color: palevioletred;
 }
 
 /* Div todos los anuncios */
@@ -368,7 +397,7 @@
 
 /* Nombre usuario */
 .divCard__user {
-  font-size: .9rem;
+  font-size: 0.9rem;
   font-weight: lighter;
   color: palevioletred;
   margin-bottom: 15px;
@@ -406,55 +435,52 @@
   gap: 10px;
 }
 
-
 .divCard__button:hover {
   background-color: rgba(255, 182, 193, 0.2);
   color: palevioletred;
 }
 
-
 /* -----------------  ANUNCIOS ----------------- */
 
-.welcome__divCard{
-    margin: 0 5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center center;
-    max-width: 80%;
-    
+.welcome__divCard {
+  margin: 0 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center center;
+  max-width: 80%;
 }
 
-.divCard__content{
-    padding: 1rem;
-    margin: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    font-family: Arial, Helvetica, sans-serif;
-    width: 100%;
+.divCard__content {
+  padding: 1rem;
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
 }
 
-.divCard__content__title{
-    font-weight: bold;
-    font-size: 1.3rem;
-} 
+.divCard__content__title {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
 
-.div__divCard__button{
-    display: flex;
-    justify-content: space-between;
-    align-items: left;
+.div__divCard__button {
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
 }
 
 .divCard__button {
-    cursor: pointer;
-    font-family: Arial, Helvetica, sans-serif;
-    outline: none;
-    padding: .8rem;
-    color: palevioletred;
-    border-radius: 8px;
-    background-color: rgba(255, 182, 193, 0.2);
-    border: none; 
-    max-width: 15rem;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  outline: none;
+  padding: 0.8rem;
+  color: palevioletred;
+  border-radius: 8px;
+  background-color: rgba(255, 182, 193, 0.2);
+  border: none;
+  max-width: 15rem;
 }
 
 .divCard__button:hover {
@@ -472,63 +498,41 @@
   padding: 20px;
   background-color: rgba(255, 182, 193, 0.2);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nuevoAnuncio__button {
+  background-color: white;
+  color: rgba(255, 182, 193);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: lighter;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 15px 0;
+}
+
+.nuevoAnuncio__button:hover {
+  background-color: rgba(255, 182, 193, 0.2);
+  color: white;
 }
 
 /* Texto principal */
-.nuevoAnuncio__h2 .nuevoAnuncio__h3{
+.nuevoAnuncio__h2 .nuevoAnuncio__h3 {
   font-size: 1.5rem;
   font-weight: bold;
   color: #333;
   margin: 15px 0;
 }
 
-/* Formulario */
-.formularioPost {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin: 20px 0;
-}
-
-/* Inputs del formulario */
-.formularioPost__input {
-  width: 100%;
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  transition: border-color 0.3s ease;
-}
-
-.formularioPost__inputId{
-  color: rgba(0, 0, 0, 0.3);
-}
-
-.formularioPost__input:focus {
-  border-color: palevioletred;
-  outline: none;
-}
-
-/* Botón de submit */
-.formularioPost__submit {
-  background-color: palevioletred;
-  color: #fff;
-  font-size: 1rem;
-  font-weight: bold;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.formularioPost__submit:hover {
-  background-color: rgba(255, 182, 193, 0.5);;
-  color: palevioletred;
-}
-
 /* Todos mis anuncios */
 .nuevoAnuncio__list {
+  width: 100%;
+  max-width: 400px;
   margin: 15px 0;
   list-style-type: none;
   padding: 0;
@@ -544,7 +548,7 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: left;
+  text-align: center;
   color: #333;
   font-size: 1rem;
   transition: background-color 0.3s ease;
@@ -557,16 +561,19 @@
 /* --------- UPDATEFORM.JSX ------------ */
 
 /* Div principal */
-.updateForm__div{
+.updateForm__div {
   max-width: 100%;
   height: 100vh;
   margin: 0 auto;
   padding: 20px;
   background-color: rgba(255, 182, 193, 0.2);
   text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
-.updateForm__h2{
+.updateForm__h2 {
   font-size: 1.5rem;
   font-weight: bold;
   color: #333;
@@ -574,7 +581,9 @@
 }
 
 /*Formulario PUT*/
-.formularioPut{
+.formularioPut,
+.formularioPost,
+.formularioContacto {
   width: 100%;
   max-width: 400px;
   background-color: #ffffff;
@@ -585,10 +594,13 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+  margin: 25px 0;
 }
 
 /* Inputs del formulario */
-.formularioPut__input {
+.formularioPut__input,
+.formularioPost__input,
+.formularioContact__input {
   width: 100%;
   padding: 10px;
   font-size: 1rem;
@@ -598,18 +610,21 @@
   transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
-.formularioPut__input:focus {
+.formularioPut__input:focus,
+.formularioPost__input:focus {
   border-color: palevioletred;
   background-color: #f0f8ff;
   outline: none;
 }
 
-.formularioPut__inputId{
+.formularioPut__inputId {
   color: rgba(0, 0, 0, 0.3);
 }
 
 /* Botón de submit */
-.formularioPut__submit {
+.formularioPut__submit,
+.formularioPost__submit,
+.formularioContact__button {
   background-color: palevioletred;
   color: #fff;
   font-size: 1rem;
@@ -621,7 +636,51 @@
   transition: background-color 0.3s ease;
 }
 
-.formularioPut__submit:hover {
-  background-color: rgba(255, 182, 193, 0.5);;
+.formularioPut__submit:hover,
+.formularioPost__submit:hover,
+.formularioContact__button:hover {
+  background-color: rgba(255, 182, 193, 0.5);
   color: palevioletred;
+}
+
+.formularioPut__button,
+.formularioPost__button,
+.formularioContact__button__cancelar {
+  background-color: white;
+  color: rgba(255, 182, 193);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: lighter;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formularioPut__button:hover,
+.formularioPost__button:hover,
+.formularioContact__button__cancelar:hover {
+  background-color: rgba(255, 182, 193, 0.2);
+  color: white;
+}
+
+/* ------------------ CONTACTO.JSX -------------*/
+
+.contacto__div {
+  max-width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 182, 193, 0.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contacto__h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin: 15px 0;
 }

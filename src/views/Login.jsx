@@ -35,15 +35,15 @@ function Login() {
       setLoading(true);
 
       const config = {
-        method: 'POST',
+        method: "POST",
         headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Headers': 'POST, GET, PUT, DELETE, OPTIONS, HEAD, Authorization, Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers, Access-Control-Allow-Origin',
-            'Content-Type': 'application/json',
-        }
-    }
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Headers":
+            "POST, GET, PUT, DELETE, OPTIONS, HEAD, Authorization, Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers, Access-Control-Allow-Origin",
+          "Content-Type": "application/json",
+        },
+      };
 
-  
       await axios
         .post(`${VITE_URL_EXPRESS_VERCEL}/login`, User, config)
         .then(({ data }) => {
@@ -74,8 +74,14 @@ function Login() {
 
   return (
     <div className="register__div">
-      <h3 className="register__h3">Tienes ya una cuenta?</h3>
-      <h2 className="register__h2">Login:</h2>
+      <h3 className="register__h3">Bienvenido!</h3>
+      <p className="register__p">
+        Bienvenido/a a Better Barter, un espacio donde puedes
+        conectarte para compartir con los demás lo que sabes hacer y aprender lo que quieres o necesitas.
+        
+        En Better Barter, cada habilidad tiene valor y todos tienen algo que aportar.
+      </p>
+      <h2 className="register__h2">Inicia sesión</h2>
 
       <form
         action=""
@@ -110,18 +116,9 @@ function Login() {
         />
 
         <button type="submit" className="register__formButton">
-          {loading ? "Cargando..." : "Login! "}{" "}
+          {loading ? "Cargando..." : "Login "}{" "}
         </button>
         <br />
-        {/* <p className="register__p">No tienes una cuenta?</p>
-        <b
-          onClick={() => {
-            navigate("/home");
-          }}
-          className="register__iniciaSesion"
-        >
-          Registrate!
-        </b> */}
       </form>
     </div>
   );
