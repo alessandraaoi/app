@@ -285,17 +285,28 @@
 .explora__h2__sub {
   font-size: 1rem;
   font-weight: 400;
+  color: #555;
+  margin-bottom: 5px;
+  margin: 5px 0;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.explora__h2__sub__color{
+  font-size: 1rem;
+  font-weight: 400;
   color: palevioletred;
   margin-bottom: 5px;
-  margin: 15px 0;
+  margin: 5px 0;
   line-height: 1.6;
+  text-align: center;
 }
 
 .explora__subtitulo {
   font-size: 1.2rem;
   font-weight: 400;
   color: #555;
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
 
 /* Lista de anuncios */

@@ -30,14 +30,15 @@ function Explora() {
 
       <div className="explora__div">
         <h2 className="explora__h2"> Explora tu comunidad! </h2>
-        <h2 className="explora__h2__sub">
+        <h2 className="explora__h2__sub__color">
           ¿Sabes cocinar, diseñar, tocar un instrumento, o enseñar un idioma? ¿O
-          tal vez estás buscando aprender algo nuevo? En Better Barter,
-          puedes intercambiar tus habilidades directamente con otras personas,
-          sin necesidad de dinero, solo talento, tiempo y pasión.
+          tal vez estás buscando aprender algo nuevo? 
         </h2>
+        <h2 className="explora__h2__sub">En Better Barter,
+          puedes intercambiar tus habilidades directamente con otras personas,
+          sin necesidad de dinero. Sólo necesitarás talento, tiempo y pasión.</h2>
         <h2 className="explora__subtitulo">
-          En este espacio encont los anuncios publicados por otros usuarios
+          En este espacio encontrarás los anuncios publicados por otros usuarios
         </h2>
 
         <ul className="explora__list">
