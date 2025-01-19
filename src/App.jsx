@@ -28,7 +28,7 @@ function App() {
 
     <Route path = '/loginError/:_id' element = {<LoginError/>} />
     <Route path = '/welcome/:_id' element = {<Welcome/>} />
-    {/* <Route path = '/anuncios/:userid' element = {<OfreceServicio/>}/> */}
+    <Route path = '/anuncios/:userid' element = {<OfreceServicio/>}/>
     <Route path = '/edit/:idAnuncio' element = {<UpdateForm/>}/>
 
     </Routes>
