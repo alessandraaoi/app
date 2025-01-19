@@ -30,11 +30,6 @@ function Welcome() {
     navigate("/servicios");
   };
 
-  // // función que se ejecuta al hacer click en el botón 'Contacta con xxx'
-  const goContact = () => {
-    navigate('/contacto')
-  }
-
   useEffect(() => {
     axios
       .get(`${VITE_URL_EXPRESS_VERCEL}/user/${_id}`)
@@ -101,9 +96,7 @@ function Welcome() {
                 </p>
 
                 <div className="div__divCard__button">
-                  <button type="button" className="divCard__button" onClick={goContact}>
-                    Contacta con {`${name}`}{" "}
-                  </button>
+        
                   <button
                     type="button"
                     className="divCard__button"

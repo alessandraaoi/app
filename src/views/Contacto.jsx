@@ -10,12 +10,9 @@ function Contacto() {
     navigate(`/welcome/${_id}`);
   };
 
-  // guardo el nombre del usuario con el cual se ha iniciado sesión en la variable local
-  let local = localStorage.getItem("user");
-
   return (
     <div className="contacto__div">
-      <h2 className="contacto__h2">Contacta con {`${local}`}</h2>
+      <h2 className="contacto__h2">Formulario de contacto</h2>
 
       {/* ------- FORM CONTACTO -------- */}
 

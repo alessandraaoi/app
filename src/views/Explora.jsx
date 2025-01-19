@@ -3,11 +3,19 @@ import Header2 from "../components/Header2";
 
 import { useEffect } from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Explora() {
   const [anuncios, setAnuncios] = useState([]);
 
   const { VITE_URL_EXPRESS_VERCEL } = import.meta.env;
+  
+  const navigate = useNavigate()
+
+  // // función que se ejecuta al hacer click en el botón 'Contacta con xxx'
+  const goContact = () => {
+    navigate('/contacto')
+  }
 
   let getAnuncios = async () => {
     let options = { method: "GET" };
@@ -47,6 +55,9 @@ function Explora() {
             <li key={anuncio._id} className="explora__listItem">
               <p className="explora__listItemTitle">{anuncio.title}</p>
               <p className="explora__listItemText">{anuncio.description}</p>
+              <button type="button" className="divCard__button" onClick={goContact}>
+                    Contacta
+                  </button>
             </li>
           ))}
         </ul>
